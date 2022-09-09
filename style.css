@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white:#fff;
+    --text-color1:rgb(0, 0, 0);
+    --text-color2:rgb(255, 255, 255);
+    --background-primary:rgb(0, 0, 0);
+    --background-secundary:rgb(219, 217, 217);
+    --background-general:rgb(247, 247, 247);
+    
+    --box-shadow:1px 1px 3px rgb(77, 77, 77);
+
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.todo{
+    width: 100vw;
+    height: 100vh;  
+    background-color: var(--background-general); 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo-title{
+    width: min(80vw, 60rem);
+    height: 6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5rem;
+    box-shadow:var(--box-shadow);
+
+    font-size: 3rem;
+    font-weight: 500;
+    background-color: var(--background-primary);
+    color: var(--text-color2);
+}
+.todo-list{
+    width: min(80vw, 60rem);
+    
+    
+}
+.todo-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    height: 5rem;
+    box-shadow:var(--box-shadow);
+
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    padding-inline: 1rem;
+    margin-block: 1rem;
+}
+.todo-item input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+.todo-item:hover{
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--background-secundary);
+}
+.todo-new-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: min(80vw, 60rem);
+    height: 5rem;
+    font-size: 1.6rem;
+    
+    background-color: var(--background-secundary);
+    box-shadow:var(--box-shadow);
+
+    padding: 1rem;
+    margin-block: 1rem;
+}
+.todo-new-item:hover, input{
+    cursor: pointer;
+    background-color:rgb(196, 196, 196);
+}
+.todo-new-item input{
+    border: none;
+    background-color:inherit;
+    width: 100%;
+    outline: none;
+   
+    font-size: 1.6rem;
+    font-style: italic;
+
+    padding: .5rem;
+    text-align: center;
+}
+.todo-new-item input::placeholder{
+  color: rgb(73, 73, 73);
+}
+.btn{
+   padding: .2rem .4rem;
+   border: 1px solid gray;
+}
+.todo-item input[type="checkbox"]:checked + div{
+    text-decoration: line-through;
+}
