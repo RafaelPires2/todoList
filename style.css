@@ -111,4 +111,5 @@
 }
 .todo-item input[type="checkbox"]:checked + div{
     text-decoration: line-through;
+    font-style: italic;
 }
