@@ -58,6 +58,7 @@
 
     font-size: 1.6rem;
     font-weight: 500;
+    text-transform:capitalize;
 
     padding-inline: 1rem;
     margin-block: 1rem;
@@ -84,7 +85,7 @@
     box-shadow:var(--box-shadow);
 
     padding: 1rem;
-    margin-block: 1rem;
+    margin-block: 1rem;    
 }
 .todo-new-item:hover, input{
     cursor: pointer;
