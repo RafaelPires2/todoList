@@ -34,6 +34,12 @@ const addItem = (event) => {
         refresh();
      }
 }
+const updateItem = (index) => {
+    dataBase[index].status = dataBase[index].status === '' ? 'checked' : '';
+    refresh();
+}
+
+
 const removeItem = (index) => {
     dataBase.splice(index, 1);
     refresh();
@@ -44,6 +50,9 @@ const clickItem = (event) => {
     if (element.type === 'button') {
         const index = element.dataset.index;
         removeItem(index)
+    } else {
+        const index = element.dataset.index;
+        updateItem(index)
     }
 
 }
