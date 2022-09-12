@@ -29,7 +29,8 @@ const clearTarefas = () => {
 const addItem = (event) => {
     const tecla = event.key;
     const text = event.target.value;
-     if(tecla === 'Enter') {
+
+     if(text != "" && tecla === 'Enter') {
         const dataBase = getDB();
         dataBase.push({'tarefa': text, 'status': ''})
         setDB(dataBase);
