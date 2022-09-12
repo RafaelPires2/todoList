@@ -12,9 +12,9 @@ const createItem = (tarefa, status, index) => {
     const item = document.createElement('label');
     item.classList.add('todo-item');
     item.innerHTML = `
-        <input type="checkbox" ${status} data-index=${index}/>
+        <input type="checkbox" ${status} data-index=${index} >
         <div>${tarefa}</div>
-        <input class="btn" type="button" value="X" data-index=${index}/>
+        <input class="btn" type="button" value="X" data-index=${index} >
     `
     document.querySelector('#todoList').appendChild(item);
 }
@@ -34,10 +34,21 @@ const addItem = (event) => {
         refresh();
      }
 }
+const removeItem = (index) => {
+    dataBase.splice(index, 1);
+    refresh();
+}
+
 const clickItem = (event) => {
     const element = event.target;
-    console.log(element)
+    if (element.type === 'button') {
+        const index = element.dataset.index;
+        removeItem(index)
+    }
+
 }
+
+
 
 document.querySelector('#newItem').addEventListener('keypress', addItem);
 document.querySelector('#todoList').addEventListener('click', clickItem);
